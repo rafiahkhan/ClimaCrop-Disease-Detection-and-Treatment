@@ -1,6 +1,7 @@
 # ClimaCrop — Crop disease detection and treatment
 
-**Farmers** used to wait **days or months** on **lab turnaround**, **travel**, or **specialist queues** just to learn whether a **leaf** was diseased and what **treatment path** made sense—while the crop kept deteriorating. **This solution** collapses that first step: after one **photo upload** of **cotton, maize, rice, or wheat** foliage, the **vision model** returns a **ranked disease read in under three seconds** on a typical laptop or GPU (**26-class EfficientNet-B0**, **segmentation**, **FastAPI**, **browser UI**). **Local Ollama** then drafts **treatment-style guidance** from that label—**no paid cloud LLM API keys** in the repository—so the farmer can **react the same visit** and still **verify every recommendation** with **extension services** and **pesticide label rules**. Trained on **35,000+** leaves; you clone **code**, **`config.yaml`**, and **`models/`** here (not the full image archive) to **retrain**, **CLI-test**, or **deploy**.
+Farmers used to wait days or months on lab turnaround, travel, or specialist queues just to learn whether a leaf was diseased and what treatment path made sense—while the crop kept deteriorating. This solution shortens that wait: one photo of cotton, maize, rice, or wheat foliage can produce a first disease screening in under three seconds, with clear treatment-style suggestions on the same screen, so growers can respond during the same field visit and still confirm every step with local extension and pesticide label requirements. The underlying system learned from 35,000+ example leaves; the materials published here are the runnable application and trained model bundle, not the full private image archive.
+
 ---
 
 ## 1. Overview
