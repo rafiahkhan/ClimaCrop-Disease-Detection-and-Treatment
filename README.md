@@ -121,9 +121,8 @@ Each immediate subfolder under a crop name becomes part of the label `Crop_Folde
 ## 8. Installation
 
 ```bash
-cd desease_detection
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+git clone https://github.com/rafiahkhan/ClimaCrop-Disease-Detection-and-Treatment.git
+cd ClimaCrop-Disease-Detection-and-Treatment
 pip install -r requirements.txt
 ```
 
