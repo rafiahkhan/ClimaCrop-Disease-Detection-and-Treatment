@@ -1,7 +1,5 @@
 # ClimaCrop — Crop disease detection and treatment
 
-**Team ClimaCrop**
-
 Production-style application for **automated crop leaf disease classification** and **treatment-oriented text** using a deep learning model (**EfficientNet-B0**), a **FastAPI** backend, and a **browser-based** interface. Treatment suggestions are produced with **local Ollama**; no third-party paid LLM API keys are stored in the repository.
 
 ---
