@@ -1,7 +1,6 @@
 # ClimaCrop — Crop disease detection and treatment
 
-Production-style application for **automated crop leaf disease classification** and **treatment-oriented text** using a deep learning model (**EfficientNet-B0**), a **FastAPI** backend, and a **browser-based** interface. Treatment suggestions are produced with **local Ollama**; no third-party paid LLM API keys are stored in the repository.
-
+**Farmers** used to wait **days or months** on **lab turnaround**, **travel**, or **specialist queues** just to learn whether a **leaf** was diseased and what **treatment path** made sense—while the crop kept deteriorating. **This solution** collapses that first step: after one **photo upload** of **cotton, maize, rice, or wheat** foliage, the **vision model** returns a **ranked disease read in under three seconds** on a typical laptop or GPU (**26-class EfficientNet-B0**, **segmentation**, **FastAPI**, **browser UI**). **Local Ollama** then drafts **treatment-style guidance** from that label—**no paid cloud LLM API keys** in the repository—so the farmer can **react the same visit** and still **verify every recommendation** with **extension services** and **pesticide label rules**. Trained on **35,000+** leaves; you clone **code**, **`config.yaml`**, and **`models/`** here (not the full image archive) to **retrain**, **CLI-test**, or **deploy**.
 ---
 
 ## 1. Overview
@@ -211,9 +210,6 @@ CORS is enabled for browser access during development (`src/api.py`).
 
 ---
 ## 14. UI screenshots
-
-<img width="3592" height="2080" alt="Image" src="https://github.com/user-attachments/assets/3f7d18cd-4bfa-431b-b761-042a032944c7" />
-<img width="3592" height="2080" alt="Image" src="https://github.com/user-attachments/assets/ba7c51cb-eae1-43db-9dd6-1a1ad63e2558" />
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/3f7d18cd-4bfa-431b-b761-042a032944c7" alt="web UI" width="85%" />
