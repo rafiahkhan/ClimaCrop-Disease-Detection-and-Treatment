@@ -1,0 +1,27 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Local secrets (never commit)
+.env
+.env.*
+
+# Training data stays local — do not upload full image sets to GitHub
+Cottons/
+Maize/
+Rice/
+Wheat/
+data/
+dataset/
+
+# Debug outputs
+segmented_samples/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

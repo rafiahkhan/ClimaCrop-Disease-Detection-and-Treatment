@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Team ClimaCrop">
+    <meta name="description" content="AI-powered crop leaf disease detection and treatment recommendations. Made by team ClimaCrop.">
+    <title>Crop Disease Detection & Treatment System · ClimaCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>Crop Disease Detection</h1>
+                </div>
+                <p class="subtitle">AI-Powered Plant Health Analysis & Treatment Recommendations</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Error State (Full Width) -->
+            <div class="error-state" id="errorState" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorMessage"></p>
+                <button class="btn btn-secondary" onclick="resetForm()">Try Again</button>
+            </div>
+
+            <!-- Two-Column Layout -->
+            <div class="results-section" id="resultsSection">
+                <!-- LEFT COLUMN: Upload + Disease Prediction -->
+                <section class="left-column">
+                    <div class="upload-card">
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3>Upload Leaf Image</h3>
+                            <p>Drag and drop your image here, or click to browse</p>
+                            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                                <i class="fas fa-folder-open"></i> Choose File
+                            </button>
+                        </div>
+                        <div class="preview-area" id="previewArea" style="display: none;">
+                            <div class="preview-image-container">
+                                <img id="previewImage" src="" alt="Preview">
+                                <button class="btn-remove" onclick="removeImage()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-primary btn-analyze" id="analyzeBtn" onclick="analyzeImage()">
+                                <i class="fas fa-search"></i> Analyze Disease
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Loading state (shown while analyzing - below Analyze button) -->
+                    <div class="result-card prediction-loading" id="predictionLoading" style="display: none;">
+                        <div class="loading-inline">
+                            <div class="spinner"></div>
+                            <p>Analyzing image...</p>
+                        </div>
+                    </div>
+
+                    <!-- Disease Prediction (shown after analysis) -->
+                    <div class="result-card prediction-card" id="predictionCard" style="display: none;">
+                        <div class="card-header">
+                            <h2><i class="fas fa-diagnoses"></i> Disease Prediction</h2>
+                        </div>
+                        <div class="prediction-result">
+                            <div class="disease-name" id="diseaseName"></div>
+                            <div class="confidence-bar">
+                                <div class="confidence-label">
+                                    <span>Confidence</span>
+                                    <span class="confidence-value" id="confidenceValue"></span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-predictions" id="topPredictions"></div>
+                    </div>
+                </section>
+
+                <!-- RIGHT COLUMN: Treatment Recommendations -->
+                <section class="right-column">
+                    <div class="result-card recommendations-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-lightbulb"></i> Treatment Recommendations</h2>
+                        </div>
+                        <div class="recommendations-content" id="recommendationsContent">
+                            <p class="recommendations-placeholder">Upload an image and click "Analyze Disease" to see treatment recommendations.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Crop Disease Detection System. Powered by AI & LLM Technology.<br>Made by team ClimaCrop.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

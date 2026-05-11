@@ -1,0 +1,52 @@
+data:
+  # Root directory containing Cottons/, Maize/, Rice/, Wheat/ (only for training)
+  # Change this to your project path if you want to train. For inference only, leave as is.
+  root_dir: "."
+  crops:
+    - "Cottons"
+    - "Maize"
+    - "Rice"
+    - "Wheat"
+  img_size: 224
+  train_val_split: 0.85
+  num_workers: 4
+
+segmentation:
+  enable: true
+  background_blur: true
+  # HSV thresholds for green-ish leaves (can be tuned)
+  hsv_lower: [25, 40, 40]
+  hsv_upper: [90, 255, 255]
+  kernel_size: 5
+  save_segmented: false
+  save_dir: "segmented_samples"
+
+augmentation:
+  enable: true
+  rotation_deg: 15
+  horizontal_flip_prob: 0.5
+  brightness_limit: 0.15
+  contrast_limit: 0.15
+  scale_limit: 0.1
+  shift_limit: 0.1
+
+model:
+  backbone: "efficientnet_b0"  # or "resnet50"
+  num_classes: null            # will be inferred from data
+
+training:
+  batch_size: 32
+  epochs: 30
+  lr: 0.0003
+  weight_decay: 0.0001
+  device: "cuda"   # "cuda" or "cpu"
+  output_dir: "models"
+  early_stopping:
+    enable: true
+    target_val_acc: 0.95   # stop if validation accuracy >= 95%
+    patience: 5            # stop if no improvement for 5 epochs
+    min_delta: 0.0005      # minimum accuracy improvement to count as "better"
+
+logging:
+  log_interval: 50
+
