@@ -210,8 +210,22 @@ CORS is enabled for browser access during development (`src/api.py`).
 6. **Right column:** formatted treatment-style text when Ollama succeeds; otherwise an error or informational message while the classification result remains valid.
 
 ---
+## 14. UI screenshots
 
-## 14. Disease classes (26 labels)
+<img width="3592" height="2080" alt="Image" src="https://github.com/user-attachments/assets/3f7d18cd-4bfa-431b-b761-042a032944c7" />
+<img width="3592" height="2080" alt="Image" src="https://github.com/user-attachments/assets/ba7c51cb-eae1-43db-9dd6-1a1ad63e2558" />
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3f7d18cd-4bfa-431b-b761-042a032944c7" alt="web UI" width="85%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ba7c51cb-eae1-43db-9dd6-1a1ad63e2558" alt="web UI" width="85%" />
+</p>
+
+---
+
+## 15. Disease classes (26 labels)
 
 The model assigns each image to one of **26** categories that combine **crop** and **condition** in a single label string, for example **cotton** problems such as aphids, army worm, bacterial blight, powdery mildew, or target spot, versus **Cottons_Healthy**; **maize** outcomes such as common rust, gray leaf spot, northern leaf blight, or general blight, versus **Maize_Healthy** and a non-maize leaf bucket; **rice** diseases including bacterial leaf blight, brown spot, false smut, leaf blast, leaf scald, and sheath blight, contrasted with **Rice_Healthy**; and **wheat** classes such as tan spot, mildew, smut, fusarium head blight, brown rust, yellow rust, alongside **Wheat_Wheat___Healthy**. Together these cover the main foliar symptoms and healthy baselines used during training.
 
@@ -219,7 +233,7 @@ Labels are stored as `Crop_FolderName` strings with a stable integer index for t
 
 ---
 
-## 15. Troubleshooting
+## 16. Troubleshooting
 
 | Symptom | Check |
 |--------|--------|
@@ -230,9 +244,8 @@ Labels are stored as `Crop_FolderName` strings with a stable integer index for t
 
 ---
 
-## 16. License
+## 17. License
 
 **MIT License** — see `LICENSE`. Copyright notice as in that file.
 
 ---
-
